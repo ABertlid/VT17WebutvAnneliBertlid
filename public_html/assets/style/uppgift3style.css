@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+}
+.container{
+    display: flex;
+    background-color: lightgrey;
+    padding: 10px 10px;
+    line-height: 1.5;
+}
+.item-header{
+    background-color: aqua;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 10px;
+}
+.item-main{
+    flex: 6;
+    order: 2;
+    padding: 10px;
+    background-color: whitesmoke;
+}
+.item-aside{
+    flex: 1;
+    order: 1;
+    padding: 10px;
+    background-color: lemonchiffon;
+    border: 1px solid gray;
+}
+.item-footer{
+    background-color: gray;
+    padding: 10px;
+    font-size: 12px;
+}
+a:link{
+    text-decoration: none;
+}
+
