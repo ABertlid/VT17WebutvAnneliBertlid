@@ -42,7 +42,7 @@
     border-radius: 5%;
     animation-name: roll;
     animation-duration: 2s;
-    animation-iteration-count: infinite;
+    /*animation-iteration-count: infinite;*/
 }
 #vader{
     padding: 10px;
@@ -95,7 +95,9 @@
     text-decoration: overline;
     animation-name: changerotate;
     animation-duration: 1s;
+    -webkit-animation-direction: reverse;
     animation-delay: 3s;
+    -webkit-animation-fill-mode: backwards;
     animation-iteration-count: infinite;
 }
 .right h3{
@@ -110,6 +112,7 @@
     animation-name: rollo;
     animation-duration: 2s;
     animation-delay: 2s;
+    -webkit-animation-direction: alternate-reverse;
     animation-iteration-count: infinite;
 }
 .right p{
@@ -123,6 +126,7 @@
     text-shadow: 3px 5px 3px black;
     animation-name: yay;
     animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 
