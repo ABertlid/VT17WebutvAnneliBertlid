@@ -42,7 +42,7 @@
     border-radius: 5%;
     animation-name: roll;
     animation-duration: 2s;
-    /*animation-iteration-count: infinite;*/
+    animation-iteration-count: infinite;
 }
 #vader{
     padding: 10px;
