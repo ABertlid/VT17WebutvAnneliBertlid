@@ -1,0 +1,90 @@
+* {
+    margin: 10px;
+}
+body {
+    background-image: url("../resource/cheap_diagonal_fabric.png");
+    
+/*style for page 1*/
+}
+#headline {
+    font-family: verdana, sans-serif, courier;
+    color: #324a72;
+    font-size: 40px;
+    text-align: center;
+}
+#tortillaPicture {
+    text-align: center;
+}
+
+/*style for page 2*/
+.container {
+    display: flex;
+    padding: 10px 10px;
+    line-height: 1.5;
+}
+.header {
+    border: 1px solid gray;
+    box-shadow: 0 5px 5px #FF3333;
+    text-shadow: 1px 2px 3px #FF3333;
+    border-radius: 100px;
+    text-align: center;
+    
+}
+.main {
+    flex:3;
+    order:2;
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 50px;
+}
+.aside-left {
+    flex:1;
+    order:1;
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 5px;
+}
+.article-right {
+    flex:1;
+    order:3;
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 5px;
+}
+.footer {
+    font-size: 12px;
+    
+}
+.header #tortillabread {
+    width: 300px;
+    height: 200px;  
+}
+#head {
+    font-family: verdana, sans-serif, courier;
+    text-align: center;
+}
+#cookinghead {
+    text-align: center;
+}
+.article-right p {
+    float: left;
+    font-size: 20px;
+}
+.stars {
+    cursor: pointer;
+    padding: 0 2px;
+    direction: ltr;
+}
+.main nav {
+    font-size: 15px;
+    text-align: center;
+}
+.rate {
+    
+}
+.vote {
+    
+}
+
+
+
