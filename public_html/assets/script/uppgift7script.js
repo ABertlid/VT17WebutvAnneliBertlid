@@ -73,23 +73,23 @@ function mouseClick(index){
 function voting(id){
     switch(id){
         case "star1":
-            updateVote(1);
+            votes(1);
             updateRateAndVote();
             break;
         case "star2":
-            updateVote(2);
+            votes(2);
             updateRateAndVote();
             break;
         case "star3":
-            updateVote(3);
+            votes(3);
             updateRateAndVote();
             break;
         case "star4":
-            updateVote(4);
+            votes(4);
             updateRateAndVote();
             break;
         case "star5":
-            updateVote(5);
+            votes(5);
             updateRateAndVote();
             break;
     }
@@ -101,34 +101,27 @@ function updateRateAndVote(){
     xhttp.onreadystatechange = function (){
 
 	if(this.readyState === 4 && this.status === 200){
-            
             var json = JSON.parse(this.responseText);
-                rateNo.innerHTML = json.rating.toFixed(1);
+            
+                rateNo.innerHTML = json.rating.toFixed(2);
                 voteNo.innerHTML = json.votes;
         }
     };
 
-xhttp.open("GET",
-"https://edu.oscarb.se/sjk15/api/recipe/?api_key=19dd5f4ce90b7ee6&recipe=tortillabr%C3%B6d",
-true);
+xhttp.open("GET","https://edu.oscarb.se/sjk15/api/recipe/?api_key=19dd5f4ce90b7ee6&recipe=tortillabr%C3%B6d", true);
 
 xhttp.send();
+
 }
 
-function updateVote(rates){
+function votes(rates){
     var xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function (){
-
-	if(this.readyState === 4 && this.status === 200){
-            
-            var json = JSON.parse(this.responseText); 
-        }
+        updateRateAndVote();
     };
-    updateRateAndVote();
-xhttp.open("GET",
-"https://edu.oscarb.se/sjk15/api/recipe/?api_key=19dd5f4ce90b7ee6&recipe=tortillabr%C3%B6d&rating=" +rates,
-true);
+    
+xhttp.open("GET","https://edu.oscarb.se/sjk15/api/recipe/?api_key=19dd5f4ce90b7ee6&recipe=tortillabr%C3%B6d&rating=" +rates, true);
 
 xhttp.send();
 

@@ -3,9 +3,9 @@
 }
 body {
     background-image: url("../resource/cheap_diagonal_fabric.png");
-    
-/*style for page 1*/
 }
+
+/* style for page 1 */
 #headline {
     font-family: verdana, sans-serif, courier;
     color: #324a72;
@@ -16,7 +16,7 @@ body {
     text-align: center;
 }
 
-/*style for page 2*/
+/* style for page 2 */
 .container {
     display: flex;
     padding: 10px 10px;
@@ -28,11 +28,12 @@ body {
     text-shadow: 1px 2px 3px #FF3333;
     border-radius: 100px;
     text-align: center;
-    
 }
 .main {
     flex:3;
     order:2;
+    font-family: verdana, sans-serif, courier;
+    font-size: 15px;
     border: 1px solid gray;
     padding: 10px;
     border-radius: 50px;
@@ -40,6 +41,8 @@ body {
 .aside-left {
     flex:1;
     order:1;
+    font-family: verdana, sans-serif, courier;
+    font-size: 15px;
     border: 1px solid gray;
     padding: 10px;
     border-radius: 5px;
@@ -47,13 +50,14 @@ body {
 .article-right {
     flex:1;
     order:3;
+    font-family: verdana, sans-serif, courier;
+    font-size: 15px;
     border: 1px solid gray;
     padding: 10px;
     border-radius: 5px;
 }
 .footer {
     font-size: 12px;
-    
 }
 .header #tortillabread {
     width: 300px;
@@ -66,12 +70,15 @@ body {
 #cookinghead {
     text-align: center;
 }
-h4{
+h4 {
+    font-family: verdana, sans-serif, courier;
+    font-size: 12px;
     text-decoration: underline;
 }
 .article-right p {
     float: left;
-    font-size: 20px;
+    font-family: verdana, sans-serif, courier;
+    font-size: 15px;
 }
 .stars {
     cursor: pointer;
@@ -82,12 +89,10 @@ h4{
     font-size: 15px;
     text-align: center;
 }
-.rate {
+.rate .vote{
     
 }
-.vote {
-    
-}
+
 
 
 
