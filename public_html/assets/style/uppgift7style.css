@@ -66,6 +66,9 @@ body {
 #cookinghead {
     text-align: center;
 }
+h4{
+    text-decoration: underline;
+}
 .article-right p {
     float: left;
     font-size: 20px;

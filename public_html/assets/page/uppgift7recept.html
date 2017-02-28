@@ -40,15 +40,16 @@
                     </ul>
             </aside>
             <article class="article-right">
+                <h4><em>Rösta gärna på receptet</em></h4>
                 <div>
-                    <p class="stars">&starf;</p>
-                    <p class="stars">&starf;</p>
-                    <p class="stars">&starf;</p>
-                    <p class="stars">&starf;</p>
-                    <p class="stars">&starf;</p>
+                    <p class="stars" id="star1" onclick="voting(this.id)">&starf;</p>
+                    <p class="stars" id="star2" onclick="voting(this.id)">&starf;</p>
+                    <p class="stars" id="star3" onclick="voting(this.id)">&starf;</p>
+                    <p class="stars" id="star4" onclick="voting(this.id)">&starf;</p>
+                    <p class="stars" id="star5" onclick="voting(this.id)">&starf;</p>
                 </div>
-                <p class="rate">Betyg: <span>0</span></p>
-                <p class="vote">Antal röster: <span>0</span></p>
+                <p class="rate">Betyg: <span id="rateNo">0</span></p>
+                <p class="vote">Antal röster: <span id="voteNo">0</span></p>
             </article>
         </div>
             <footer class="footer">

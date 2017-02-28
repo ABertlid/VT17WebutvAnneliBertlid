@@ -8,11 +8,18 @@
     var stars = document.getElementsByClassName("stars");
     var rate = document.getElementsByClassName("rate");
     var vote = document.getElementsByClassName("vote");
+    var rateNo = document.getElementById("rateNo");
+    var voteNo = document.getElementById("voteNo");
+    var star1 = document.getElementById("star1");
+    var star2 = document.getElementById("star1");
+    var star3 = document.getElementById("star1");
+    var star4 = document.getElementById("star1");
+    var star5 = document.getElementById("star1");
     var isClicked = false;
 
     window.onload = function() {
     portions.addEventListener("input", changeNoOfIngredients);
-    voting();
+    updateRateAndVote();
         for(var i = 0; i < stars.length; i++){
         stars[i].addEventListener("mouseover", mouseOver);
         stars[i].addEventListener("mouseout", mouseOut);
@@ -63,46 +70,67 @@ function mouseClick(index){
         }
     }
 }
+function voting(id){
+    switch(id){
+        case "star1":
+            updateVote(1);
+            updateRateAndVote();
+            break;
+        case "star2":
+            updateVote(2);
+            updateRateAndVote();
+            break;
+        case "star3":
+            updateVote(3);
+            updateRateAndVote();
+            break;
+        case "star4":
+            updateVote(4);
+            updateRateAndVote();
+            break;
+        case "star5":
+            updateVote(5);
+            updateRateAndVote();
+            break;
+    }
+}
 
-function voting(){
-    //Har skapar vi själva "AJAX" objektet
+function updateRateAndVote(){
     var xhttp = new XMLHttpRequest();
-	
-    //Denna funktion/property anropas när
-    //AJAX Objektet skickar sin request
+
     xhttp.onreadystatechange = function (){
-        //readyState: 4 betyder att sidan är redo att rendera
-        //status: 200 betyder att svaret är "okej", dvs. datan
-        //skickades korrekt
+
 	if(this.readyState === 4 && this.status === 200){
-                    
-            //gör om json objektet till ett javascript-objekt
+            
             var json = JSON.parse(this.responseText);
-                 console.log("antal röster " +json.votes);
-                 console.log("snittbetyg " +json.rating);
+                rateNo.innerHTML = json.rating.toFixed(1);
+                voteNo.innerHTML = json.votes;
         }
     };
 
-	//Här öppnar vi anslutningen mot API:et, där vi hämtar vårt
-	//JSON objekt 
 xhttp.open("GET",
 "https://edu.oscarb.se/sjk15/api/recipe/?api_key=19dd5f4ce90b7ee6&recipe=tortillabr%C3%B6d",
 true);
 
-//Här startar vi vår "parallella" händelse
 xhttp.send();
 }
 
+function updateVote(rates){
+    var xhttp = new XMLHttpRequest();
 
-//visa receptbetyg
-//GET https://edu.oscarb.se/sjk15/api/recipe/?api_key=19dd5f4ce90b7ee6&recipe=tortillabr%C3%B6d
+    xhttp.onreadystatechange = function (){
 
-// rösta på ett recept
-//GET https://edu.oscarb.se/sjk15/api/recipe/?api_key=19dd5f4ce90b7ee6&recipe=tortillabr%C3%B6d&rating=4
+	if(this.readyState === 4 && this.status === 200){
+            
+            var json = JSON.parse(this.responseText); 
+        }
+    };
+    updateRateAndVote();
+xhttp.open("GET",
+"https://edu.oscarb.se/sjk15/api/recipe/?api_key=19dd5f4ce90b7ee6&recipe=tortillabr%C3%B6d&rating=" +rates,
+true);
 
-function updateRate(){
-     
-};
-function updateVote(){
-    
-};
+xhttp.send();
+
+}
+
