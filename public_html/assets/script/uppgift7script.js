@@ -20,6 +20,12 @@
     window.onload = function() {
     portions.addEventListener("input", changeNoOfIngredients);
     updateRateAndVote();
+        if(typeof(window.localStorage) !== "undefined"){
+            if(window.localStorage.getItem("number")){
+            document.getElementById("portions").value = Number(window.localStorage.getItem("number"));
+            changeNoOfIngredients();
+    }
+}
         for(var i = 0; i < stars.length; i++){
         stars[i].addEventListener("mouseover", mouseOver);
         stars[i].addEventListener("mouseout", mouseOut);
@@ -45,7 +51,20 @@ function changeNoOfIngredients(){
         listString = listString.replace(/[0-9-.]+/, listNumber);
         numPortions[i].textContent = listString;
     }
+    setNoOfIngredients();
 };
+
+function setNoOfIngredients(){
+    if(typeof(window.localStorage !== "undefined")){
+    if(window.localStorage.getItem("number")){
+        var numberOfPortions;
+        numberOfPortions = document.getElementById("portions").value;
+        window.localStorage.setItem("number", numberOfPortions);
+    }
+    else
+        window.localStorage.setItem("number", 1);
+    }
+}
 
 function mouseOver(){ 
     if(!isClicked){
@@ -102,7 +121,6 @@ function updateRateAndVote(){
 
 	if(this.readyState === 4 && this.status === 200){
             var json = JSON.parse(this.responseText);
-            
                 rateNo.innerHTML = json.rating.toFixed(2);
                 voteNo.innerHTML = json.votes;
         }
@@ -126,4 +144,3 @@ xhttp.open("GET","https://edu.oscarb.se/sjk15/api/recipe/?api_key=19dd5f4ce90b7e
 xhttp.send();
 
 }
-

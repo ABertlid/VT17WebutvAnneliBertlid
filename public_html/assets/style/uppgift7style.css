@@ -89,6 +89,14 @@ h4 {
     font-size: 15px;
     text-align: center;
 }
+#animalgif{
+    padding: 30px;
+}
+@media all and (max-width: 500px){
+    .container{
+        flex-direction: column;
+    }
+}
 .rate .vote{
     
 }
